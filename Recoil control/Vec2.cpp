@@ -37,6 +37,13 @@ Vec2 Vec2::operator*(const float &mult)
 	return *this;
 }
 
+Vec2 Vec2::operator/(const float& mult)
+{
+	this->x /= mult;
+	this->y /= mult;
+	return *this;
+}
+
 Vec2 Vec2::Abs() {
 	this->x = fabs(x);
 	this->y = fabs(y);

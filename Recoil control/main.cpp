@@ -39,7 +39,6 @@ int main()
 		}
 	*/
 	
-	
 	bool paused = false;
 	while (1) {
 		Sleep(25);

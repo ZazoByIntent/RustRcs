@@ -7,13 +7,13 @@ Weapon getInput(){
 	{
 		if (GetAsyncKeyState(VK_F1))
 		{
+			std::cout << "test";
 			std::cout << "Chosen weapon: AR\n";
 			chosen.setEntries(29);
 			chosen.setName("AR");
 			chosen.setMagSize(30);
 			chosen.setPattern(getPattern("AR", 29));
 			chosen.setRPM(450);
-
 			break;
 		}
 		if (GetAsyncKeyState(VK_F2))
@@ -130,7 +130,7 @@ float getAttachments() {
 	{
 		if (GetAsyncKeyState(VK_F1))
 		{
-			std::cout << "Chosen sight: Silencer\n";
+			std::cout << "Chosen attachment: Silencer\n";
 			return 0.8f;
 		}
 		if (GetAsyncKeyState(VK_F2))
@@ -173,22 +173,26 @@ float getScope(){
 }
 
 Weapon printMenu() {
-	std::vector<float> set = getSettings();
-	float sens = set[0], fov = set[1], m = set[2], rndm = set[3], timer = set[4];
-	std::cout << "Current sensitivity: " << sens << ", current fov: " << fov << ", current strenght: " << m << ", current random modifier: " << rndm << ", current timer modifier: " << timer << "\n";
+	std::vector<float> set = getSettings(); //fetch settings	
+	std::cout << "Current sensitivity: " << set[0] << ", current fov: " << set[1] << ", current strenght: " << set[2] << ", current random modifier: " << set[3] << ", current timer modifier: " << set[4] << "\n"; // Print current settings and commands.
+	
 	std::cout << "--- PAUSED ---\n Choose option: \n  -F1 : AR\n  -F2 : LR\n  -F3 : SAR\n  -F4 : SMG\n  -F5 : MP5\n  -F6 : TOMMY\n  -F7 : M92\n  -F8 : M39\n  -F9 : M249\n  -HOME : Change settings\n  -ESC : Exit script\n";
+	
 	Weapon chosen = getInput();
-	if (chosen.getName() == "NULL") return chosen;
+	if (chosen.getName() == "NULL") return chosen; // Close if null.
+
 	std::cout << "\n Choose attachment: \n  -F1 : Silencer\n  -F2 : None\n";
 	float attachment_mult = getAttachments();
-	if (attachment_mult != 0.0) chosen.applyMult(attachment_mult);
+	if (attachment_mult != 1.0f) 
+		chosen.applyMultM(attachment_mult); // Get input for attachment and apply multiplier to pattern.
+
 	std::cout << "Choose scope: \n  -F1 : Holo\n  -F2 : 8x\n  -F3 : 16x\n  -F4 : Handmade\n  -F5 : Ads\n";
 	float scope_mult = getScope();
-	if (scope_mult != 1.0) chosen.applyMult(scope_mult);
-	if (getSettings() != set) {
-		set = getSettings(); sens = set[0]; fov = set[1]; m = set[2]; rndm = set[3]; timer = set[4];
-	}
-	float mult = m * (sens * 3.0f) * (fov / 100.0f);
+	if (scope_mult != 1.0f) 
+		chosen.applyMultM(scope_mult);
+
+	set = getSettings(); // Update settings if changed
+	float mult = set[2] * -0.03f * (set[0] * 3.0f) * (set[1] / 100.0f); //apply multiplier to produce pixel values.
 	chosen.applyMult(mult);
 	return chosen;
 }

@@ -8,7 +8,24 @@ void Weapon::applyMult(const float& mult)
 {
 	for(auto &v : pattern)
 	{
-		v* mult;
+		v/mult;
+	}
+}
+
+void Weapon::applyMultM(const float& mult)
+{
+	for (auto& v : pattern)
+	{
+		v * mult;
+	}
+}
+
+void Weapon::printPattern() const
+{
+	for (auto& v : pattern)
+	{
+		std::cout << v.getX() << " ";
+		std::cout << v.getY() << "\n";
 	}
 }
 

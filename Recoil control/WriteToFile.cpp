@@ -2,7 +2,7 @@
 #include "iostream"
 
 void overwriteSettings(const std::vector<float> &sets) {
-	std::ofstream file(R"(C:\RecoilData\RecoilSettings.data)");
+	std::ofstream file(R"(C:\Users\hafneral\Desktop\rcs.txt)");
 	file << sets[0]; file << "\n";
 	file << sets[1]; file << "\n";
 	file << sets[2]; file << "\n";

@@ -16,10 +16,12 @@ public:
 	Weapon() = default;
 	Weapon(const std::string &name, const std::vector<Vec2> &pattern, const unsigned &RPM, const unsigned &magSize, const unsigned& entries);
 	void applyMult(const float& mult);
+	void applyMultM(const float& mult);
 	unsigned getMagSize() const;
 	unsigned getRpm() const;
 	unsigned getEntries() const;
 	std::string getName() const;
+	void printPattern() const;
 	void setName(const std::string &name);
 	void setPattern(const std::vector<Vec2> &pattern);
 	void setRPM(const unsigned &RPM);
