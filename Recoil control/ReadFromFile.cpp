@@ -1,23 +1,19 @@
 #include "ReadFromFile.h"
 #include "iostream"
 
-std::vector<Vec2> getPattern(const std::string& name, const unsigned& entries){
-	float x, y;
-	std::string search = "null";
-	std::cout << "test";
-	std::ifstream file(R"(C:\Users\hafneral\source\repos\rcs\RecoilData.data)");
-	std::cout << entries;
-	std::vector<Vec2> pattern;
-	while (search != name) file >> search;
-	for (unsigned i = 0; i < entries; i++)
+std::vector<Vec2> getPattern(const std::string& name){
+	
+	if (name == "AR")
 	{
-		file >> x;
-		file >> y;
-		Vec2 entry(x, y);
-		pattern.push_back(entry);
+		std::vector<Vec2> pattern{ Vec2(1.390706, -2.003941), Vec2(1.176434, -3.844176), Vec2(3.387171, -5.516686), Vec2(5.087049, -7.017456), Vec2(5.094189, -8.342467), Vec2(4.426013, -9.487704), Vec2(3.250455, -10.44915), Vec2(1.73545, -11.22279), Vec2(0.04893398, -11.8046), Vec2(-1.641158, -12.19056), Vec2(-3.166891, -12.58713), Vec2(-4.360331, -13.32077), Vec2(-5.053545, -14.32128), Vec2(-5.090651, -15.51103), Vec2(-4.489915, -16.81242), Vec2(-3.382552, -18.14783) , Vec2(-1.899585, -19.43966), Vec2(-0.1720295, -20.61031) , Vec2(1.669086, -21.58213) , Vec2(3.492748, -22.27755) , Vec2(5.16793, -22.61893) , Vec2(6.563614, -22.81778) , Vec2(7.548776, -23.37389) , Vec2(7.992399, -24.21139) , Vec2(7.512226, -25.23734) , Vec2(6.063792, -26.35886) , Vec2(4.117367, -27.48302) , Vec2(2.143932, -28.51692), Vec2(0.6144824, -29.36766) };
+		return pattern;
 	}
-	return pattern;
-}
+	else
+	{
+		std::vector<Vec2> pattern;
+		return pattern;
+	}
+} 
 
 
 

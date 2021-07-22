@@ -7,12 +7,11 @@ Weapon getInput(){
 	{
 		if (GetAsyncKeyState(VK_F1))
 		{
-			std::cout << "test";
 			std::cout << "Chosen weapon: AR\n";
 			chosen.setEntries(29);
 			chosen.setName("AR");
 			chosen.setMagSize(30);
-			chosen.setPattern(getPattern("AR", 29));
+			chosen.setPattern(getPattern("AR"));
 			chosen.setRPM(450);
 			break;
 		}
@@ -22,7 +21,7 @@ Weapon getInput(){
 			chosen.setEntries(31);
 			chosen.setName("LR");
 			chosen.setMagSize(30);
-			chosen.setPattern(getPattern("LR", 31));
+			chosen.setPattern(getPattern("LR"));
 			chosen.setRPM(500);
 			break;
 		}
@@ -32,7 +31,7 @@ Weapon getInput(){
 			chosen.setEntries(2);
 			chosen.setName("SAR");
 			chosen.setMagSize(16);
-			chosen.setPattern(getPattern("SAR", 2));
+			chosen.setPattern(getPattern("SAR"));
 			chosen.setRPM(343);
 			break;
 		}
@@ -42,7 +41,7 @@ Weapon getInput(){
 			chosen.setEntries(24);
 			chosen.setName("SMG");
 			chosen.setMagSize(24);
-			chosen.setPattern(getPattern("SMG", 24));
+			chosen.setPattern(getPattern("SMG"));
 			chosen.setRPM(600);
 			break;
 		}
@@ -52,7 +51,7 @@ Weapon getInput(){
 			chosen.setEntries(32);
 			chosen.setName("MP5");
 			chosen.setMagSize(30);
-			chosen.setPattern(getPattern("MP5", 32));
+			chosen.setPattern(getPattern("MP5"));
 			chosen.setRPM(600);
 			break;
 		}
@@ -62,7 +61,7 @@ Weapon getInput(){
 			chosen.setEntries(19);
 			chosen.setName("TOMMY");
 			chosen.setMagSize(20);
-			chosen.setPattern(getPattern("TOMMY", 19));
+			chosen.setPattern(getPattern("TOMMY"));
 			chosen.setRPM(462);
 			break;
 		}
@@ -72,7 +71,7 @@ Weapon getInput(){
 			chosen.setEntries(1);
 			chosen.setName("M92");
 			chosen.setMagSize(15);
-			chosen.setPattern(getPattern("M92", 1));
+			chosen.setPattern(getPattern("M92"));
 			chosen.setRPM(400);
 			break;
 		}
@@ -82,7 +81,7 @@ Weapon getInput(){
 			chosen.setEntries(1);
 			chosen.setName("M39");
 			chosen.setMagSize(20);
-			chosen.setPattern(getPattern("M39", 1));
+			chosen.setPattern(getPattern("M39"));
 			chosen.setRPM(300);
 			break;
 		}
@@ -92,7 +91,7 @@ Weapon getInput(){
 			chosen.setEntries(1);
 			chosen.setName("M249");
 			chosen.setMagSize(100);
-			chosen.setPattern(getPattern("M249", 1));
+			chosen.setPattern(getPattern("M249"));
 			chosen.setRPM(500);
 			break;
 		}

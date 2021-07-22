@@ -1,0 +1,14 @@
+﻿  Menu.cpp
+C:\Users\hafneral\source\repos\RustRcs\Recoil control\Menu.cpp(100,37): warning C4101: 'aftimer': unreferenced local variable
+  Mouse.cpp
+C:\Users\hafneral\source\repos\RustRcs\Recoil control\Mouse.cpp(79,27): warning C4244: 'argument': conversion from 'float' to 'DWORD', possible loss of data
+C:\Users\hafneral\source\repos\RustRcs\Recoil control\Mouse.cpp(83,26): warning C4244: 'argument': conversion from 'float' to 'DWORD', possible loss of data
+C:\Users\hafneral\source\repos\RustRcs\Recoil control\Mouse.cpp(86,26): warning C4244: 'argument': conversion from 'float' to 'DWORD', possible loss of data
+  Weapon.cpp
+  main.cpp
+  Generating code
+  0 of 373 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Recoil control.vcxproj -> C:\Users\hafneral\Source\Repos\RustRcs\x64\Release\Recoil control.exe
