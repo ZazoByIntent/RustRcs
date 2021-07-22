@@ -30,11 +30,14 @@ void mouse_move(const Weapon& chosen, const float &timer, const float &random)
 			float y = round(curShot.getY()) - rndm * 2;
 			
 			float animationTime = ((sqrt(((rawShot.getX()) * (rawShot.getX())) + ((rawShot.getY()) * (rawShot.getY()))))*timer)/0.02f; // Calculate animation time from raw angle delta.
-			std::cout << "shot number " << shotsFired << "\n";
+			// std::cout << "shot number " << shotsFired << "\n";
 			smooth_move(x, y, repeatDelay - rndm, animationTime - rndm); // Actual movement function
 			
 			shotsFired++; //Increment shot counter
-			if (chosen.getName() == "M39" || chosen.getName() == "M92" || chosen.getName() == "SAR") break; //Break if single fire.
+			if (chosen.getName() == "M39" || chosen.getName() == "M92" || chosen.getName() == "SAR") {
+				Sleep(25);
+				break; //Break if single fire.
+			}
 		}
 
 		else { // Sleep if bullets depleted and still holding, could sleep for reload time of weapon.
@@ -84,10 +87,11 @@ void smooth_move(const float& x, const float& y, const float repeatDelay, float 
 
 	else if (time && t.Elapsed() + 5.0f < repeatDelay) // if exceeded by anim time but repeat delay is not up, sleep for remainder.  
 		Sleep((int)repeatDelay - t.Elapsed());
-	
+	/*
 	std::cout << "moved " << moved.getX() << " " << moved.getY() << " for " << t.Elapsed() << "\n";
 	std::cout << "should've moved for " << x << " " << y << "\n";
 	std::cout << "animation time was: " << animationTime << "\n";
+	*/
 }
 
 

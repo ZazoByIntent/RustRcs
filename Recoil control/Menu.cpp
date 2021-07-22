@@ -18,7 +18,7 @@ Weapon getInput(){
 		if (GetAsyncKeyState(VK_F2))
 		{
 			std::cout << "Chosen weapon: LR\n";
-			chosen.setEntries(31);
+			chosen.setEntries(29);
 			chosen.setName("LR");
 			chosen.setMagSize(30);
 			chosen.setPattern(getPattern("LR"));
@@ -28,7 +28,7 @@ Weapon getInput(){
 		if (GetAsyncKeyState(VK_F3))
 		{
 			std::cout << "Chosen weapon: SAR\n";
-			chosen.setEntries(2);
+			chosen.setEntries(3);
 			chosen.setName("SAR");
 			chosen.setMagSize(16);
 			chosen.setPattern(getPattern("SAR"));
@@ -48,7 +48,7 @@ Weapon getInput(){
 		if (GetAsyncKeyState(VK_F5))
 		{
 			std::cout << "Chosen weapon: MP5\n";
-			chosen.setEntries(32);
+			chosen.setEntries(29);
 			chosen.setName("MP5");
 			chosen.setMagSize(30);
 			chosen.setPattern(getPattern("MP5"));
@@ -68,7 +68,7 @@ Weapon getInput(){
 		if (GetAsyncKeyState(VK_F7))
 		{
 			std::cout << "Chosen weapon: M92\n";
-			chosen.setEntries(1);
+			chosen.setEntries(3);
 			chosen.setName("M92");
 			chosen.setMagSize(15);
 			chosen.setPattern(getPattern("M92"));
@@ -78,7 +78,7 @@ Weapon getInput(){
 		if (GetAsyncKeyState(VK_F8))
 		{
 			std::cout << "Chosen weapon: M39\n";
-			chosen.setEntries(1);
+			chosen.setEntries(3);
 			chosen.setName("M39");
 			chosen.setMagSize(20);
 			chosen.setPattern(getPattern("M39"));
@@ -88,7 +88,7 @@ Weapon getInput(){
 		if (GetAsyncKeyState(VK_F9))
 		{
 			std::cout << "Chosen weapon: M249\n";
-			chosen.setEntries(1);
+			chosen.setEntries(99);
 			chosen.setName("M249");
 			chosen.setMagSize(100);
 			chosen.setPattern(getPattern("M249"));
@@ -97,7 +97,7 @@ Weapon getInput(){
 		}
 		if (GetAsyncKeyState(VK_HOME))
 		{
-			float sens, fov, m, rndm, timer, aftimer;
+			float sens, fov, m, rndm, timer;
 			std::vector<float> sets;
 			std::cout << "Input sensitivity: >\n";
 			std::cin >> sens; sets.push_back(sens);
@@ -118,6 +118,7 @@ Weapon getInput(){
 			chosen.setName("NULL");
 			break;
 		}
+		Sleep(25);
 	}
 	return chosen;
 }
@@ -137,6 +138,7 @@ float getAttachments() {
 			std::cout << "No attachment\n";
 			return 1.0f;
 		}
+		Sleep(25);
 	}
 }
 
@@ -168,6 +170,7 @@ float getScope(){
 		{
 			return 1.0f;
 		}
+		Sleep(25);
 	}
 }
 

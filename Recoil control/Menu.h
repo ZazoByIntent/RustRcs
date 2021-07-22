@@ -4,6 +4,7 @@
 #include "Windows.h"
 #include "iostream"
 #include "ReadFromFile.h"
+#include "Pattern.h"
 
 Weapon getInput();
 
